@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script type="text/javascript" src="../js/JavaScript.js"></script>
+<h1>Empleado</h1>
+<br />
+<hr />
+<button type="button" class="btn btn-success " id="modalbuttonadd" onclick="Modal()">
+Agregar
+</button>
+<br />
+<hr />
+  <div class="row">
+        <div class="col-md-12">
+            <table id="tblEmpleado" class="table table-hover table table-success table-striped "  border="1" >
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">Editar</th>
+                      
+                        <th class="text-center  " scope="col" >Numero Nomina</th>
+                        <th class="text-center" scope="col">Nombre</th>
+                        <th class="text-center " scope="col">Apellido Paterno</th>
+                        <th class="text-center" scope="col">Apellido Materno</th>
+                       
+                        <th class="text-center " scope="col">Nombre Estado</th>
+
+                        <th class="text-center " scope="col">Eliminar</th>
+                    </tr>
+
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    
+
+<!-- Modal -->
+<div class="modal fade" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" > X </button>
+        <h3 class="modal-title" id="myModalLabel">Formulario Empleado</h3>
+      </div>
+       <div class="modal-body">
+                <form>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtIdEmpleado" placeholder="IdEmpleado" disabled="disabled" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtNumeroNomina" placeholder="Numero de nomina" disabled="disabled" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtNombre" placeholder="Nombre" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtApellidoPaterno" placeholder="Apellido Paterno" />
+                    </div>
+                    <br />
+                    <div class="form-group"> 
+                        <input type="text" class="form-control" id="txtApellidoMaterno" placeholder="Apellido Materno" />
+                    </div>
+                    <br />
+                   <div class="form-group">
+                        <select name="estado" class="form-control" id="ddlEstado" placeholder="Estado"></select>                          
+                   </div>
+                </form>
+            </div>
+      <div class="modal-footer">
+       
+          <button type="button" class="btn btn-success" id="ButtonActualizar" onclick="Actualizar()"> Actualizar</button>
+         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Detalle</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <h5>
+                                Acción completada con éxito
+                            </h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" value="Regresar" data-dismiss="modal">Regresar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
